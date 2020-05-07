@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ECE3E3"
-    tools:context=".details.DetailsTodosPaisesActivity">
+    tools:context=".details.DetailsTodosEstadosActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="409dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#BB8A1EED"
         android:orientation="vertical"
@@ -18,216 +18,218 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txtNomePais"
+            android:id="@+id/txtState"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:fontFamily="sans-serif-light"
-            android:text="TextView"
+            android:text="Estado"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#ffff"
             android:textSize="36sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardView6"
         android:layout_width="380dp"
         android:layout_height="80dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="80dp"
-        app:cardBackgroundColor="#FFFFFF"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="#FDFBFB"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="28dp"
-                android:text="Ultimo registro"
+                android:layout_marginTop="29dp"
+                android:text="Ultimo Registro"
                 android:textColor="#1C1C1C"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtData"
+                android:id="@+id/txtDataEstado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:text="data"
                 android:textColor="#000000"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView4"
-                app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toTopOf="@+id/textView4" />
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/textView5" />
 
             <TextView
-                android:id="@+id/txtHora"
+                android:id="@+id/txtHoraEstado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:text="hora"
                 android:textColor="#000000"
                 android:textSize="24sp"
-                app:layout_constraintStart_toEndOf="@+id/txtData"
-                app:layout_constraintTop_toTopOf="@+id/txtData" />
+                app:layout_constraintBottom_toBottomOf="@+id/txtDataEstado"
+                app:layout_constraintStart_toEndOf="@+id/txtDataEstado"
+                app:layout_constraintTop_toTopOf="@+id/txtDataEstado" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/cardView7"
         android:layout_width="380dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="#FDFBFB"
         app:cardCornerRadius="10dp"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" >
+        app:layout_constraintEnd_toEndOf="@+id/cardView6"
+        app:layout_constraintStart_toStartOf="@+id/cardView6"
+        app:layout_constraintTop_toBottomOf="@+id/cardView6" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
-                android:text="Confirmados"
-                android:textColor="#1C1C1C"
+                android:text="Suspeitos"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtNumConf"
+                android:id="@+id/txtNumSusp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:text="000"
                 android:textColor="#FFB600"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView8"
-                app:layout_constraintStart_toEndOf="@+id/textView8"
-                app:layout_constraintTop_toTopOf="@+id/textView8" />
+                app:layout_constraintBottom_toBottomOf="@+id/textView9"
+                app:layout_constraintStart_toEndOf="@+id/textView9"
+                app:layout_constraintTop_toTopOf="@+id/textView9" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/cardView8"
         android:layout_width="380dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="#FDFBFB"
         app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView2"
-        app:layout_constraintStart_toStartOf="@+id/cardView2"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" >
+        app:layout_constraintEnd_toEndOf="@+id/cardView7"
+        app:layout_constraintStart_toStartOf="@+id/cardView7"
+        app:layout_constraintTop_toBottomOf="@+id/cardView7" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
                 android:text="Mortes"
-                android:textColor="#1C1C1C"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtNumMortes"
+                android:id="@+id/txtNumMortesEstado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:text="000"
                 android:textColor="#FF0000"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView10"
-                app:layout_constraintStart_toEndOf="@+id/textView10"
-                app:layout_constraintTop_toTopOf="@+id/textView10" />
+                app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toTopOf="@+id/textView13" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView4"
+        android:id="@+id/cardView9"
         android:layout_width="380dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="#FDFBFB"
         app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView3"
-        app:layout_constraintStart_toStartOf="@+id/cardView3"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintEnd_toEndOf="@+id/cardView8"
+        app:layout_constraintStart_toStartOf="@+id/cardView8"
+        app:layout_constraintTop_toBottomOf="@+id/cardView8" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
-                android:text="Curados"
-                android:textColor="#1C1C1C"
+                android:text="Descartados"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtNumCurados"
+                android:id="@+id/txtDescart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:text="000"
                 android:textColor="#00FF0F"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView12"
-                app:layout_constraintStart_toEndOf="@+id/textView12"
-                app:layout_constraintTop_toTopOf="@+id/textView12" />
+                app:layout_constraintBottom_toBottomOf="@+id/textView16"
+                app:layout_constraintStart_toEndOf="@+id/textView16"
+                app:layout_constraintTop_toTopOf="@+id/textView16" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView5"
         android:layout_width="380dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="#FDFBFB"
         app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView4"
-        app:layout_constraintStart_toStartOf="@+id/cardView4"
-        app:layout_constraintTop_toBottomOf="@+id/cardView4" >
+        app:layout_constraintEnd_toEndOf="@+id/cardView9"
+        app:layout_constraintStart_toStartOf="@+id/cardView9"
+        app:layout_constraintTop_toBottomOf="@+id/cardView9" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="28dp"
                 android:text="Total"
-                android:textColor="#1C1C1C"
+                android:textAllCaps="false"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -240,9 +242,9 @@
                 android:text="000"
                 android:textColor="#532424"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView14"
-                app:layout_constraintStart_toEndOf="@+id/textView14"
-                app:layout_constraintTop_toTopOf="@+id/textView14" />
+                app:layout_constraintBottom_toBottomOf="@+id/textView18"
+                app:layout_constraintStart_toEndOf="@+id/textView18"
+                app:layout_constraintTop_toTopOf="@+id/textView18" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

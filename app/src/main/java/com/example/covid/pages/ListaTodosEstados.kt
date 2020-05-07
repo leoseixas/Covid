@@ -1,4 +1,4 @@
-package com.example.covid19.pages
+package com.example.covid.pages
 
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
@@ -9,29 +9,31 @@ import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.covid.R
-import com.example.covid19.adapter.TodosPaisesAdapter
-import com.example.covid19.entities.TodosPaises
-import com.example.covid19.http.TodosPaisesHttp
+import com.example.covid.adapter.TodosEstadosAdapter
+import com.example.covid.http.TodosEstadosHttp
+import com.example.covid19.entities.TodosEstados
+import kotlinx.android.synthetic.main.activity_lista_todos_estados.*
 import kotlinx.android.synthetic.main.activity_lista_todos_paises.*
+import kotlinx.android.synthetic.main.activity_lista_todos_paises.txtMsg
 
-class ListaTodosPaises : AppCompatActivity() {
+class ListaTodosEstados : AppCompatActivity() {
 
-    var paisesList = arrayListOf<TodosPaises>()
-    var adapter = TodosPaisesAdapter(paisesList)
-    private var asyncTask : PaisesTask?= null
+    var estadosList = arrayListOf<TodosEstados>()
+    var adapter = TodosEstadosAdapter(estadosList)
+    private var asyncTask : EstadosTask?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lista_todos_paises)
+        setContentView(R.layout.activity_lista_todos_estados)
         setSupportActionBar(findViewById(R.id.mytool2))
         carregarDados()
         initRecycleView()
     }
 
     fun initRecycleView(){
-        recycleTodosPaises.adapter=adapter
-        val layout =LinearLayoutManager(this)
-        recycleTodosPaises.layoutManager=layout
+        recycleTodosEstados.adapter=adapter
+        val layout = LinearLayoutManager(this)
+        recycleTodosEstados.layoutManager=layout
     }
 
     fun showProgress(show: Boolean){
@@ -39,19 +41,19 @@ class ListaTodosPaises : AppCompatActivity() {
             txtMsg.text = "Carregando"
         }else{
             txtMsg.visibility = if(show) View.VISIBLE else View.GONE
-            progressBar.visibility = if(show) View.VISIBLE else View.GONE
+            progressBar2.visibility = if(show) View.VISIBLE else View.GONE
         }
     }
 
     fun carregarDados(){
-        paisesList.clear()
-        if (paisesList.isNotEmpty()){
+        estadosList.clear()
+        if (estadosList.isNotEmpty()){
             showProgress(false)
         }else{
             if (asyncTask==null){
                 //startDowload()
                 if (asyncTask?.status!=AsyncTask.Status.RUNNING){
-                    asyncTask = PaisesTask()
+                    asyncTask = EstadosTask()
                     asyncTask?.execute()
                 }else{
                     progressBar.visibility =View.GONE
@@ -63,10 +65,10 @@ class ListaTodosPaises : AppCompatActivity() {
         }
     }
 
-    private fun updatePaises(result: List<TodosPaises>){
+    private fun updateEstados(result: List<TodosEstados>){
         if (result!=null){
-            paisesList.clear()
-            paisesList.addAll(result)
+            estadosList.clear()
+            estadosList.addAll(result)
         }else{
             txtMsg.text = "Erro ao carregar"
         }
@@ -74,22 +76,21 @@ class ListaTodosPaises : AppCompatActivity() {
         asyncTask=null
     }
 
-    inner class PaisesTask: AsyncTask<Void,Void,List<TodosPaises>?>(){
-
+    inner class EstadosTask: AsyncTask<Void,Void,List<TodosEstados>?>(){
         override fun onPreExecute() {
             super.onPreExecute()
             showProgress(true)
         }
 
-        override fun doInBackground(vararg params: Void?): List<TodosPaises>? {
-            return TodosPaisesHttp.loadTodosPaises()
+        override fun doInBackground(vararg params: Void?): List<TodosEstados>? {
+            return TodosEstadosHttp.loadTodosEstados()
         }
 
-        override fun onPostExecute(result: List<TodosPaises>?) {
+        override fun onPostExecute(result: List<TodosEstados>?) {
             super.onPostExecute(result)
             showProgress(false)
             if (result!=null){
-                updatePaises(result)
+                updateEstados(result)
             }
         }
     }

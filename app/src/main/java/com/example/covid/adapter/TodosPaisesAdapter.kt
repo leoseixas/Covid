@@ -21,8 +21,15 @@ class TodosPaisesAdapter(private val paises: List<TodosPaises>):
         vh.itemView.setOnClickListener{
             val paises = paises[vh.adapterPosition]
             val intent = Intent(v.context, DetailsTodosPaisesActivity::class.java)
+            intent.putExtra("country", paises.country)
+            intent.putExtra("cases", paises.cases.toString())
+            intent.putExtra("confirmed", paises.confirmed.toString())
+            intent.putExtra("deaths", paises.deaths.toString())
+            intent.putExtra("recovered", paises.recovered.toString())
+            intent.putExtra("data", paises.data)
+            intent.putExtra("hora", paises.hora)
+            v.context.startActivity(intent)
         }
-
         return  vh
     }
 
@@ -38,7 +45,7 @@ class TodosPaisesAdapter(private val paises: List<TodosPaises>):
 
     class VH(itemView: View): RecyclerView.ViewHolder(itemView){
         var txtCountry: TextView = itemView.txtPais
-        var txtNumCaes: TextView = itemView.txtNumCasos
+        var txtNumCaes: TextView = itemView.txtCasosEstados
     }
 
 }

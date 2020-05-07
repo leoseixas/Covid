@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/allEstados"
+        android:id="@+id/btnTodosEstados"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -23,10 +23,10 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:text="Todos os países"
-        app:layout_constraintEnd_toEndOf="@+id/allEstados"
+        app:layout_constraintEnd_toEndOf="@+id/btnTodosEstados"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/allEstados"
-        app:layout_constraintTop_toBottomOf="@+id/allEstados" />
+        app:layout_constraintStart_toStartOf="@+id/btnTodosEstados"
+        app:layout_constraintTop_toBottomOf="@+id/btnTodosEstados" />
 
     <ImageView
         android:id="@+id/imageView2"
