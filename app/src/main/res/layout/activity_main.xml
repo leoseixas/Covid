@@ -4,29 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8E5E5"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnTodosEstados"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:text="Todos os estados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/btnTodosPais" />
 
     <Button
         android:id="@+id/btnTodosPais"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
         android:text="Todos os países"
-        app:layout_constraintEnd_toEndOf="@+id/btnTodosEstados"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnTodosEstados"
-        app:layout_constraintTop_toBottomOf="@+id/btnTodosEstados" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -40,6 +36,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bacterias" />
+
+    <Button
+        android:id="@+id/btnEstado"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:text="Estado"
+        app:layout_constraintEnd_toEndOf="@+id/btnTodosEstados"
+        app:layout_constraintStart_toStartOf="@+id/btnTodosEstados"
+        app:layout_constraintTop_toBottomOf="@+id/btnTodosEstados" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:text="Registro"
+        app:layout_constraintEnd_toEndOf="@+id/btnTodosPais"
+        app:layout_constraintStart_toStartOf="@+id/btnTodosPais"
+        app:layout_constraintTop_toBottomOf="@+id/btnTodosPais" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

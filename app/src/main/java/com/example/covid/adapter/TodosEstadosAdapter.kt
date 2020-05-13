@@ -23,7 +23,7 @@ class TodosEstadosAdapter(private val estados: List<TodosEstados>):
             intent.putExtra("state", estados.state)
             intent.putExtra("data", estados.data)
             intent.putExtra("hora", estados.hora)
-            intent.putExtra("suspects", estados.suspects.toString())
+            intent.putExtra("susp   ects", estados.suspects.toString())
             intent.putExtra("deaths", estados.deaths.toString())
             intent.putExtra("refuses", estados.refuses.toString())
             intent.putExtra("cases", estados.cases.toString())
