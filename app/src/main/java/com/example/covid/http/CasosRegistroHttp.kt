@@ -5,24 +5,37 @@ import android.net.ConnectivityManager
 import android.util.Log
 import android.widget.TextView
 import com.example.covid.entities.CasosRegistro
+import kotlinx.android.synthetic.main.activity_calendar_view_casos.*
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
+import java.util.*
 import java.util.concurrent.TimeUnit
 
-class CasosRegistroHttp(data: TextView) {
+class CasosRegistroHttp(data: String) {
 
-    var Json_URL = "https://covid19-brazil-api.now.sh/api/report/v1/brazil/$data"
+    var dia = "2020/04/05"
+
+    var Json_URL = "https://covid19-brazil-api.now.sh/api/report/v1/brazil/"
 
     fun hasConnetcion(ctx: Context): Boolean {
         val cm = ctx.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val info = cm.activeNetworkInfo
         return info != null && info.isConnected
+    }
+
+    fun updateDateInView(): String{
+        val dia = "20/04/2020"
+
+        val sdf = DateTimeFormatter.ofPattern("yyyyMMdd")
+        val data = dia.format(sdf)
+        return data
     }
 
     fun loadCasosData(): List<CasosRegistro> {
@@ -31,7 +44,7 @@ class CasosRegistroHttp(data: TextView) {
             .connectTimeout(10, TimeUnit.SECONDS)
             .build()
         val request = Request.Builder()
-            .url(Json_URL)
+            .url(Json_URL+updateDateInView())
             .build()
         val response = client.newCall(request).execute()
         val jsonString = response.body?.string()

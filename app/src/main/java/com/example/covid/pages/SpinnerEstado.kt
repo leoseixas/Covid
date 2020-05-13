@@ -44,7 +44,7 @@ class SpinnerEstado : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-              
+
             }
 
         }

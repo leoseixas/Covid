@@ -22,8 +22,10 @@ import com.example.covid.http.CasosRegistroHttp
 
 class CalendarViewCasos : AppCompatActivity() {
 
+    var data: String = "20200513"
+
     var button_date: Button? = null
-    var textview_date: TextView? = null
+    //var textview_date: TextView? = null
     var cal = Calendar.getInstance()
 
     var casosList = arrayListOf<CasosRegistro>()
@@ -35,17 +37,20 @@ class CalendarViewCasos : AppCompatActivity() {
         setContentView(R.layout.activity_calendar_view_casos)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        textview_date = this.txtData
+       // textview_date = this.txtData
         button_date = this.btnData
 
-        textview_date!!.text = "----/--/--"
+       // textview_date!!.text = "----/--/--"
 
         val dateSetListener = object : DatePickerDialog.OnDateSetListener{
             override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
                 cal.set(Calendar.YEAR, year)
                 cal.set(Calendar.MONTH, month)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateDateInView()
+
+                data = txtData.text.toString()
+                carregarDados()
+                initRecycleView()
             }
         }
 
@@ -56,17 +61,10 @@ class CalendarViewCasos : AppCompatActivity() {
                     cal.get(Calendar.YEAR),
                     cal.get(Calendar.MONTH),
                     cal.get(Calendar.DAY_OF_MONTH)).show()
-                carregarDados()
-                initRecycleView()
             }
         })
     }
 
-    private fun updateDateInView(){
-        val myFormat = "yyyyMMdd"
-        val sdf = SimpleDateFormat(myFormat, Locale.US)
-        txtData!!.text = sdf.format(cal.getTime())
-    }
 
     fun initRecycleView(){
         recycleCasos.adapter=adapter
@@ -119,7 +117,7 @@ class CalendarViewCasos : AppCompatActivity() {
             showProgress(true)
         }
         override fun doInBackground(vararg params: Void?): List<CasosRegistro>? {
-            return CasosRegistroHttp(txtData).loadCasosData()
+            return CasosRegistroHttp(data).loadCasosData()
         }
 
         override fun onPostExecute(result: List<CasosRegistro>?) {
