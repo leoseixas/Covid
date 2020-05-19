@@ -9,18 +9,19 @@
 
     <Button
         android:id="@+id/btnTodosEstados"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Todos os estados"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/btnTodosPais" />
+        android:layout_width="255dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Brasil"
+        app:layout_constraintStart_toStartOf="@+id/btnTodosPais"
+        app:layout_constraintTop_toBottomOf="@+id/btnTodosPais" />
 
     <Button
         android:id="@+id/btnTodosPais"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:text="Todos os países"
+        android:layout_width="255dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:text="Países"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -39,23 +40,46 @@
 
     <Button
         android:id="@+id/btnEstado"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="24dp"
-        android:text="Estado"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@android:string/ok"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="255dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Registro"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/btnEstado" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="245dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="#5E5D5D"
         app:layout_constraintEnd_toEndOf="@+id/btnTodosEstados"
         app:layout_constraintStart_toStartOf="@+id/btnTodosEstados"
         app:layout_constraintTop_toBottomOf="@+id/btnTodosEstados" />
 
-    <Button
-        android:id="@+id/btnRegistro"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="24dp"
-        android:text="Registro"
-        app:layout_constraintEnd_toEndOf="@+id/btnTodosPais"
-        app:layout_constraintStart_toStartOf="@+id/btnTodosPais"
-        app:layout_constraintTop_toBottomOf="@+id/btnTodosPais" />
+    <TextView
+        android:id="@+id/txtUf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        android:textColor="#373535"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEstado"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toTopOf="@+id/btnEstado"
+        app:layout_constraintVertical_bias="0.444" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
