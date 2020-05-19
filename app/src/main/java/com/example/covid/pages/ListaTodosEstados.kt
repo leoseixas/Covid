@@ -38,7 +38,7 @@ class ListaTodosEstados : AppCompatActivity() {
 
     fun showProgress(show: Boolean){
         if (show){
-            txtMsg.text = "Carregando"
+            txtMsg.text
         }else{
             txtMsg.visibility = if(show) View.VISIBLE else View.GONE
             progressBar2.visibility = if(show) View.VISIBLE else View.GONE

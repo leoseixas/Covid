@@ -36,7 +36,7 @@ class ListaTodosPaises : AppCompatActivity() {
 
     fun showProgress(show: Boolean){
         if (show){
-            txtMsg.text = "Carregando"
+            txtMsg.text
         }else{
             txtMsg.visibility = if(show) View.VISIBLE else View.GONE
             progressBar.visibility = if(show) View.VISIBLE else View.GONE

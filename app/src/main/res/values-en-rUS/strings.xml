@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Covid</string>
+    <string name="pais">COUNTRIES</string>
+    <string name="brasil">BRAZIL</string>
+    <string name="registro">" RECORD"</string>
+    <string name="casos">Cases</string>
+    <string name="ultimoRegistro">Last record</string>
+    <string name="confirmados">Confirmed</string>
+    <string name="mortes">" Deaths"</string>
+    <string name="curados">Recovered</string>
+    <string name="total">Total</string>
+    <string name="suspeitos">Suspects</string>
+    <string name="descartados">" Discarded"</string>
+    <string name="carregando">Loading</string>
+</resources>

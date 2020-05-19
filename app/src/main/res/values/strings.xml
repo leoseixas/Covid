@@ -29,4 +29,16 @@
         <item>TO</item>
         <item>DF</item>
     </string-array>
+    <string name="pais">PAISES</string>
+    <string name="brasil">BRASIL</string>
+    <string name="registro">REGISTRO</string>
+    <string name="casos">Casos</string>
+    <string name="ultimoRegistro">Último registro</string>
+    <string name="confirmados">Confirmados</string>
+    <string name="mortes">Mortes</string>
+    <string name="curados">Curados</string>
+    <string name="total">Total</string>
+    <string name="suspeitos">Suspeitos</string>
+    <string name="descartados">Descartados</string>
+    <string name="carregando">Carregando</string>
 </resources>
